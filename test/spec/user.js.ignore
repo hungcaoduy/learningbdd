@@ -1,0 +1,52 @@
+var TARGET = require('./sites').HINTMD;
+
+var client = require('./driver'),
+    chai = require('chai'),
+    expect = chai.expect,
+    assert = chai.assert;
+
+describe('Test login feature of site ' + TARGET.name, function() {
+	this.timeout(5000);
+
+	before(function(done) {
+		client.init(done);
+	});
+
+	/*it('should show the correct title', function(done) {
+		client
+			.url(TARGET.url)
+			.getTitle()
+				.then(function(title) {
+					expect(title).to.equal(TARGET.title);
+				})
+			.call(done);
+	});*/
+
+	it('should show the login form', function(done) {
+		client
+			.url(TARGET.url)
+			.getSource(function(err, source) {
+				console.log('source', source);
+			})
+			.keys('abc')
+
+			// .submitForm()
+			// // .addValue('A')
+			// // .pause(1000)
+			// // .call(done);
+			// .addValue('tedkao')
+			// .elementActive(function(curr) {
+			// 	console.log('I am here');
+			// 	curr.sendKeys(['tedkao','Tab']);
+			// })
+			// .elementActive(function(curr) {
+			// 	curr.sendKeys(['T3DCaoHjNt^^D']);
+			// 	curr.sendKeys(['Enter']);
+			// })
+			.call(done);
+	});
+
+	after(function(done) {
+		client.end(done);
+	});
+})

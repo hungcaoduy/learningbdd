@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "up and runing fast",
+  "main": "main.js",
+  "scripts": {
+    "test": "gulp test",
+    "start": "node server"
+  },
+  "author": "hung.caoduy",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "~2.3.0",
+    "webdriverio": "~2.4.5",
+    "gulp": "~3.8.11",
+    "browser-sync": "~2.7.5",
+    "gulp-mocha": "~2.1.0",
+    "selenium-standalone": "~4.4.2",
+    "webdrivercss": "~1.1.3"
+  }
+}
